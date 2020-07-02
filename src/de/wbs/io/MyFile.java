@@ -27,7 +27,7 @@ public class MyFile {
         System.out.println(f2.isFile());
 
         dir = new File("D:/javademo");
-        f1 = new File(dir , "subordner");
+        f1 = new File(dir , "subordner");   //
 
         if(dir.exists() && dir.isDirectory()){
             if(!f1.exists()){
