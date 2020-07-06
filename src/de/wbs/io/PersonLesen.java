@@ -12,6 +12,10 @@ public class PersonLesen {
             if(o instanceof Person){
                 Person p = (Person)o;
                 System.out.println(p.getName());
+                System.out.println(p.getFirstname());
+                System.out.println(p.getAdress().getCity());
+                System.out.println(p.getPwd());
+                System.out.println(p.getAge());
             }
 
         } catch (FileNotFoundException e) {
