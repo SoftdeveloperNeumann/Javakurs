@@ -33,6 +33,7 @@ public class MyDirectories {
 //           }
 //            FileSystemProvider provider = FileSystemProvider.installedProviders().get(0);
             path = Paths.get(System.getProperty("java.home"),"lib","rt.jar");
+            path = Paths.get("D:\\Beispiele", "MyApplication.zip");
             FileSystem fs = FileSystems.newFileSystem(path, null );
 
             Files.walkFileTree(fs.getPath("/"), new FileVisitor<Path>() {
