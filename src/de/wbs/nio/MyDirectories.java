@@ -27,12 +27,13 @@ public class MyDirectories {
         System.out.println("Ausgabe mit FileVisitor:");
 
         try {
-            path = Paths.get("D:/javademo");
-           for( FileSystemProvider provider : FileSystemProvider.installedProviders()){
-               System.out.println(provider);
-           }
-            FileSystemProvider provider = FileSystemProvider.installedProviders().get(0);
-            FileSystem fs = provider.newFileSystem(path, new HashMap<String,String>() );
+//            path = Paths.get("D:/javademo");
+//           for( FileSystemProvider provider : FileSystemProvider.installedProviders()){
+//               System.out.println(provider);
+//           }
+//            FileSystemProvider provider = FileSystemProvider.installedProviders().get(0);
+            path = Paths.get(System.getProperty("java.home"),"lib","rt.jar");
+            FileSystem fs = FileSystems.newFileSystem(path, null );
 
             Files.walkFileTree(fs.getPath("/"), new FileVisitor<Path>() {
                 String str = "";
