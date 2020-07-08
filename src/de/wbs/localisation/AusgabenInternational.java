@@ -1,6 +1,7 @@
 package de.wbs.localisation;
 
 import java.text.DateFormat;
+import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,7 +14,7 @@ public class AusgabenInternational {
 
 //        Locale.setDefault(new Locale("en","US"));
 //        Locale.setDefault(new Locale("hi","In"));
-//        Locale.setDefault(Locale.US);
+        Locale.setDefault(new Locale("de","CH"));
         ResourceBundle rb = ResourceBundle.getBundle("de.wbs.resources.hello");
         Calendar c = Calendar.getInstance();
         Date d = c.getTime();
@@ -31,5 +32,18 @@ public class AusgabenInternational {
         System.out.println(rb.getString("hello"));
         System.out.println(rb.getString("more"));
         System.out.println(rb.getString("appName"));
+        System.out.println(rb.getString("notranslation"));
+
+        char mw ='w';
+        String anrede = null;
+        String name  = "Neumann";
+        if(mw == 'm'){
+            anrede = rb.getString("mr");
+        }else{
+            anrede = rb.getString("mrs");
+        }
+        String output = MessageFormat.format(rb.getString("sayHello"),anrede,name);
+        System.out.println(output);
+
     }
 }
