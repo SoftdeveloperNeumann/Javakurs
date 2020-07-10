@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.wbs.gui.FXDemo" />
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.wbs.gui.FXDemo">
+    <children>
+        <Button fx:id="btn1" layoutX="30.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#btn1OnClick"
+                text="Button" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="16.0"
+                AnchorPane.rightAnchor="16.0"/>
+        <Label fx:id="label" layoutX="286.0" layoutY="63.0" text="Label" AnchorPane.bottomAnchor="60.0"
+               AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0"/>
+    </children>
+</AnchorPane>
