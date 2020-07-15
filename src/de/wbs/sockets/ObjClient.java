@@ -12,13 +12,13 @@ public class ObjClient {
         int i = 0;
 
         try (Socket client = new Socket("127.0.0.1", 1234);
-
              ObjectOutputStream out = new ObjectOutputStream(client.getOutputStream());
              ObjectInputStream in = new ObjectInputStream(client.getInputStream())) {
-            client.setSoTimeout(10000);
+
             ObjSample obj = new ObjSample();
             out.writeObject(obj);
             out.flush();
+            client.setSoTimeout(10000);
             ObjSample resp = (ObjSample) in.readObject();
             System.out.println(resp.getName());
             System.out.println(obj.getName());
