@@ -9,14 +9,16 @@ public class Person {
     private String number;
     private String zip;
     private String city;
+    private int age;
 
-    public Person(String lastname, String firstname, String street, String number, String zip, String city) {
+    public Person(String lastname, String firstname, String street, String number, String zip, String city, int age) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.street = street;
         this.number = number;
         this.zip = zip;
         this.city = city;
+        this.age = age;
     }
 
     public String getLastname() {
@@ -67,6 +69,14 @@ public class Person {
         this.city = city;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,12 +87,13 @@ public class Person {
                 Objects.equals(getStreet(), person.getStreet()) &&
                 Objects.equals(getNumber(), person.getNumber()) &&
                 Objects.equals(getZip(), person.getZip()) &&
-                Objects.equals(getCity(), person.getCity());
+                Objects.equals(getCity(), person.getCity())&&
+                Objects.equals(getAge(),person.getAge());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLastname(), getFirstname(), getStreet(), getNumber(), getZip(), getCity());
+        return Objects.hash(getLastname(), getFirstname(), getStreet(), getNumber(), getZip(), getCity(),getAge());
     }
 
     @Override
@@ -94,12 +105,13 @@ public class Person {
                 ", number='" + number + '\'' +
                 ", zip='" + zip + '\'' +
                 ", city='" + city + '\'' +
+                ", age='" + age +'\'' +
                 '}';
     }
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        Person p = new Person(this.lastname,firstname,street,number,zip,city);
+        Person p = new Person(this.lastname,firstname,street,number,zip,city,age);
         return p;
     }
 }
